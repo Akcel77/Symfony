@@ -20,6 +20,21 @@ class MainController extends AbstractController
      * @Route("/test", name="main_test")
      */
     public function test(){
-        return $this->render('main/test.html.twig');
+        $testB = [
+            "title" => "Games of thrones",
+            "year" => 2000
+        ];
+        return $this->render('main/test.html.twig' , [
+            "testB" => &$testB,
+        ]);
+    }
+    /**
+     * @Route("/about", name="main_about")
+     */
+    public function about()
+    {
+        return $this->render('main/about.html.twig', [
+
+        ]);
     }
 }
