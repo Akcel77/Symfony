@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} | detail.title
+{% endblock %}
+
+{% block body %}
+    <h1>Wish : {{ detail.title }}</h1>
+    <div>Categorie : {{ detail.category.name|title  }}</div>
+    <div>Par : {{ detail.author }}</div>
+    <div>Description :{{ detail.description }}</div>
+    <div>Create the : {{ detail.dateCreated|date}}</div>
+
+{% endblock %}
+
+{% block extrastyles %}
+    <style>
+        body {
+            background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url("{{ asset('img/'~ detail.category.name ~ '.jpg' )  }}");
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+
+{% endblock %}
+
